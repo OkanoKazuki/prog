@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 32px;
+}
+
+header {
+  background-color: rgb(2, 61, 7);
+  padding-top: 5px;
+  font-size: 15px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  color: #fff;
+}
+
+main {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: rgb(2, 61, 7);
+  border-bottom: 1px solid rgb(2,61,7);
+  text-align: center; 
+  background-image: url(cat.jpg); 
+  background-position:top;
+  background-size:600px;
+  background-repeat: repeat-y;
+  text-shadow:3px 3px 0#000000;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+
+}
+
+h2{
+  font-size:px;
+}
+footer {
+  background-color: rgb(2, 61, 7);
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  color: #fff;
+}
+
+p {
+  font-size: 100%;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+  height: 100px;
+ 
+}
+
+ul {
+  padding: 0;
+  border-top: 1px solid #fff;
+  display: table;
+  /* 定義 */
+  table-layout: fixed;
+  width: 100%;
+}
+
+li {
+  text-align: center;
+  list-style-type: none;
+  border: 1px solid #666;
+  background-color: #FFF;
+  display: table-cell;
+  /* 定義 */
+  cursor: pointer;
+}
+
+li:hover {
+  background: #0066CC;
+  color: #fff;
+}
+textarea{
+  margin: 3%;
+  width: 30%;
+  height: 30px;
+  font-size:50%;
+  box-shadow: 3px 3px 3px 3px #fff;
+}
+
+input[type=radio]{
+  width:30px;
+  height:30px;
+}

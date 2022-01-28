@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="sample.css">
+<title>気まぐれな猫と仲良くなりたい</title>
+</head>
+<body>
+
+<header>
+    <h1>気まぐれな猫と仲良くなりたい</h1>
+    <h2></h2>
+</header>
+
+<main>
+  <p id="quest">ここに問題が出題されます</p>
+  <div id="cat"></div>
+  <p>
+    <input type="radio" name="toi" value="1"><span id="toi1">選択肢１</span>
+    <input type="radio" name="toi" value="2"><span id="toi2">選択肢２</span>
+  </p>
+  
+</main>
+
+<footer>　　　</footer>
+<script>
+//ここから記述領域［START］
+
+  //以下に配列を記述してください。
+  //問題文[配列]
+  const qs = [
+    "おや？猫がいる",
+    "猫がこちらに気づいたようだ",
+    "猫が鳴いているようだ",
+    "猫が何やら目を見つめて何かを訴えているようだ",
+    "猫が近づいてきた",
+    "なんて気まぐれなのだろうか、猫はこの場を立ち去るようだ"  
+  ];
+    
+  //回答選択肢[多重配列]
+  const toi =[
+    ["近づく","声をかける"],
+    ["近づく","見つめる"],
+    ["そっと見つめる","大声で呼びかける"],
+    ["目を合わせる","ちょっと近づく"],
+    ["こちらも近づく","その場で待つ"],
+    ["追いかける","そのまま見送る"]
+  ];
+
+
+  //答え[配列]
+  const ans = [2, 2, 1, 1, 2, 2];
+
+  //1.最初の問題文＆回答選択肢＆回答値を設定
+  let i = 0;
+  $("#quest").text( qs[i]);
+  $("#toi1").text(toi[i][0]);
+  $("#toi2").text(toi[i][1]);
+
+  //2.ラジオボタンをクリックしたらイベント発生！(クリックイベント)
+  let maru = 0;
+  $("[name=toi]").on("click",function(){
+    const v = $(this).val();
+    if(ans[i] == v){    
+      $("h2").text("おや？");
+      maru++;
+    }else{
+      $("h2").text("あれ？");
+    }
+    i++;
+    
+
+    //配列に入れるiが1+される。
+    if(i<=5){
+      $("h1").text(" ");
+      $("#quest").text(qs[i]);
+      $("#toi1").text(toi[i][0]);
+      $("#toi2").text(toi[i][1]);
+    }else{
+      if(maru==0){
+        $("h1").text("あれからあの猫とは出会えていない...");
+        $("h2").text("嫌われてしまったのだろうか…？");
+        $("#quest").text("");
+        $("#toi1").text("");
+        $("#toi2").text("");
+      }else if(maru==6){
+        $("h1").text("あれから毎日のように声をかけてくれるようになった");
+        $("h2").text("すっかり懐かれたみたい");
+        $("#quest").text("");
+        $("#toi1").text("");
+        $("#toi2").text("");
+      }else{
+        $("h1").text("あれからもたまに出会うが懐いてはくれなかった...");
+        $("h2").text("もっと仲良くなりたかったな…");
+        $("#quest").text("");
+        $("#toi1").text("");
+        $("#toi2").text("");
+      }
+      
+
+     
+
+    } 
+  });
+
+
+
+
+
+
+
+//ここまでが記述領域［END］
+</script>
+</body>
+</html>
